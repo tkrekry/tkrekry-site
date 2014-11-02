@@ -1,0 +1,58 @@
+extends default.html
+
+mixin menu-item(url, name)
+  li
+    if document.url === url
+      strong=name
+    else
+      a(href=url)=name
+
+    if block
+      block
+
+block logo
+  div.logo
+    h1
+      a(href="/sv/index.html", title="Förstasidan", id="header-main") 
+        span TKrekry
+    h2 Kom med i teamet – arbeta på hälsovårdscentral
+
+//- Utility-nav block for switch language
+block utility-nav
+  div.utility-nav
+    ul
+      li
+        a(href=document.meta.counterPart) fi
+      li
+        strong sv
+      li
+        a(href= site.admin_url)
+          i.fa.fa-lock
+          span(title="På finska") Logga in
+
+//- Render main menu
+block navigation
+  nav(role="navigation")
+    ul#nav
+      +menu-item("/sv/index.html", "Förstasidan")
+      +menu-item("/sv/lediga-jobb.html", "Lediga jobb")
+      +menu-item("/sv/halsovardscentralen.html", "Hälsovårdscentralen")
+      +menu-item("/sv/arbeta-pa-halsovardscentral.html", "Arbeta på hälsovårdscentral")
+        ul#sub-nav
+          +menu-item("/sv/arbeta-pa-halsovardscentral/sarskild-allmanlakarutbildning-och-specialiseringsutbildning.html", "Särskild allmänläkarutbildning och specialiseringsutbildning")
+          +menu-item("/sv/arbeta-pa-halsovardscentral/anvisningar-for-arbetsansokan.html", "Anvisningar för arbetsansökan")
+          +menu-item("/sv/arbeta-pa-halsovardscentral/lakarnas-loner.html", "Läkarnas löner")
+          +menu-item("/sv/arbeta-pa-halsovardscentral/tandlakarnas-loner.html", "Tandläkarnas löner")
+          +menu-item("/sv/arbeta-pa-halsovardscentral/anstallningsformaner.html", "Anställningsförmåner")
+          +menu-item("/sv/arbeta-pa-halsovardscentral/arbetsarrangemang.html", "Arbetsarrangemang")
+
+//- Render footer
+block footer
+  footer(role="contentinfo")
+    div
+      p
+        a(href="/sv/index.html", title="Förstasidan", id="footer-main") 
+          span TKrekry
+        span &copy; Birkalands sjukvårdsdistrikt 2014
+      p
+        a(href="/sv/om-webbplatsen.html") Fakta om sidorna

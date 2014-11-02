@@ -1,0 +1,48 @@
+---
+layout: sv
+title: Arbeta på hälsovårdscentral samt lediga jobb för läkare och tandläkare
+description: I TKrekry hittar du de lediga jobben för läkare och tandläkare på hälsovårdscentralerna samt kontaktinformationen till de personer som handhar rekryteringen. Dessutom berättar vi om särskild allmänläkarutbildning och specialiseringsutbildning, löner, anställningsförmåner och arbetsarrangemang på hälsovårdscentralerna.
+keywords: läkare, tandläkare, ledigt jobb, lediga jobb, platsannons, hälsovårdscentral, särskild allmänläkarutbildning och specialiseringsutbildning, anställningsförmåner, lön, arbetsarrangemang
+counterPart: /
+language: sv
+---
+div(class="teaser", id="welcome")
+  div
+    h1 Kom och arbeta på <br />hälsovårdscentral
+    p I TKrekry hittar du de  <a href="/sv/lediga-jobb.html">lediga jobben</a> för läkare och tandläkare samt <a href="/sv/halsovardscentralen.html">kontaktinformationen</a> till de rekryteringsansvariga på hälsovårdscentralerna. Vi beskriver också <a href="/sv/arbeta-pa-halsovardscentral.html">arbetet</a> på hälsovårdscentralerna i stora drag.
+  img(src="http://res.cloudinary.com/hcmcbhfea/image/upload/v1414773964/tkrekry-banner-03.jpg", alt="Läkare och patient")
+
+div.teaser-wrapper
+  a(href="/sv/arbeta-pa-halsovardscentral.html", class="teaser-link")
+    div(class="teaser", id="content")
+      h2 Arbeta på <br />hälsovårdscentral
+      p Vi berättar om den särskilda allmänläkarutbildningen och specialiseringsutbildningen samt om jobbansökan, löner, anställningsförmåner och arbetsarrangemang.
+      p.button Att arbeta på hälsovårdscentral&nbsp;&rsaquo;
+
+  a(href="/terveyskeskukset.html", class="teaser-link")
+    div(class="teaser", id="contact")
+      h2 Hälsovårdscentralernas <br />kontaktuppgifter
+      p På webbplatsen finns hälsovårdscentralernas presentationer och kontaktinformationen till rekryteringsansvariga.
+      p.button Hör dig för om jobb&nbsp;&rsaquo;
+  
+div(class="teaser listing", id="jobs")
+  h2 
+    a(href="/sv/lediga-jobb.html") Lediga jobb för läkare och tandläkare <br />på hälsovårdscentralerna
+  ul
+    for advertisement in getCollection("advertisements_sv").findAllLive({lang: 'sv', published: true}, [{mtime: -1}]).toJSON().slice(0,5)
+      if (advertisement && advertisement.tkrekry)        
+        li
+          a(href="/#{advertisement.slug}")
+            h3 #{advertisement.tkrekry.title}
+            p 
+              | #{advertisement.tkrekry.employer && advertisement.tkrekry.employer.name}, 
+              | #{advertisement.tkrekry.office && advertisement.tkrekry.office.locality}. 
+              | #{advertisement.tkrekry.job_profession_group && advertisement.tkrekry.job_profession_group.name.sv}. 
+              | #{advertisement.tkrekry.job_type && advertisement.tkrekry.job_type.name.sv}. Ansökningstiden går ut: 
+              | #{advertisement.tkrekry.application_period_end && moment(advertisement.tkrekry.application_period_end).format('DD.MM.YYYY')}.
+            
+            i.fa.fa-chevron-right.fa-2x
+
+  p
+    a(href="/sv/lediga-jobb.html", class="button") Alla lediga jobb&nbsp;&rsaquo;
+      

@@ -1,0 +1,55 @@
+---
+title: "Avoimet työpaikat - Työpaikkailmoitus: " #{title}
+description: "Avoimet työpaikat - Työpaikkailmoitus: " #{title}
+---
+h1 #{title},
+  span #{employer.name}, #{office && office.locality}
+
+!= description
+
+div.listing.no-links
+  ul
+    if office
+      li
+        h3 Www-osoite:
+        p
+          a(href=office.web_address)=office.web_address
+    li
+      h3 Yhteystiedot:
+      ul.jobadcontacts
+        for contact in contacts
+          li(itemscope, itemtype="http://data-vocabulary.org/Person")
+            span(itemprop="title role")= contact.title + " "
+            span(itemprop="name")= contact.first_name + " " + contact.last_name + " "
+            a(href= "tel:" + contact.phone, itemprop="telephone")= contact.phone
+            a(href= "mailto:" + contact.email, itemprop="email")= contact.email
+
+    if office
+      li
+        h3 Työpaikan osoite:
+        p
+          a(href= "http://maps.google.fi/maps?f=q&source=s_q&hl=fi&geocode=&q=" + office.street + "+" + office.postal_code + "+" + office.locality)
+            span(itemprop="streetAddress")= office.street + ", "
+            span(itemprop="postalCode")= office.postal_code + " "
+            span(itemprop="addressLocality")= office.locality
+    li
+      h3 Työn tyyppi:
+      p= job_type.name.fi
+    li
+      h3 Työn kesto:
+      p= job_duration.name.fi
+    li
+      h3 Työaika:
+      p= working_hours
+    li
+      h3 Työ alkaa:
+      p= work_begins
+    li
+      h3 Haku päättyy:
+      p= formatDate(application_period_end, 'DD.MM.YYYY - HH:mm')
+    li
+      h3 Jätä hakemus:
+      p= application_submission
+    li
+      h3 Ilmoitus jätetty:
+      p= formatDate(published_at, 'DD.MM.YYYY')

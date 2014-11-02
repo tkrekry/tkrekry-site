@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<RoutingRules>
+  <RoutingRule>
+    <Condition>
+      <KeyPrefixEquals>/index.html</KeyPrefixEquals>
+    </Condition>
+    <Redirect>
+      <HostName>www.tkrekry.fi</HostName>
+      <Protocol>http</Protocol>
+      <ReplaceKeyWith></ReplaceKeyWith>
+      <HttpRedirectCode>301</HttpRedirectCode>     
+    </Redirect>
+  </RoutingRule>
+</RoutingRules>

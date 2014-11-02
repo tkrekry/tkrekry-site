@@ -1,0 +1,54 @@
+.utility-nav, nav, .feedback, .addthis_toolbox {
+  display: none;  
+}
+
+body {
+  font-family: Georgia, serif;
+}
+
+figure {
+  margin-left: 0;
+}
+
+a {
+  word-wrap: break-word;
+}
+
+/* Print url for outbound links  */
+a[href^="http://"]:after, a[href^="https://"]:after {
+  content: " (" attr(href) ")";
+}
+
+.logo h1, .logo h2 {
+  display: inline-block;
+}
+
+.logo h1 a {
+  background: url('http://res.cloudinary.com/hcmcbhfea/image/upload/v1414773966/tkrekry-logo-black.png') 0 0 no-repeat;
+  color: #fff; 
+  display: block;
+  height: 55px;
+  width: 212px;
+}
+
+.logo h1 a span {
+  visibility: hidden;
+}
+
+.logo h2 {
+  font-size: 1.4em;
+  font-style: italic;
+  font-weight: normal;
+  margin-left: 1em;
+  position: relative;
+  top: 0.4em;
+}
+
+article h1 {
+  font-size: 200%;
+}
+
+form ul, .listing ul {
+  list-style-type: none; 
+  padding-left: 0;
+}

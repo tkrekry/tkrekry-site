@@ -1,0 +1,56 @@
+---
+title: title + " - Kontaktpersoner för rekrytering, utbildningsberedskap, presentation och verksamhetsställen"
+description: title + " - Kontaktpersoner för rekrytering, utbildningsberedskap, presentation och verksamhetsställen."
+---
+
+h1= name
+
+h2 Kontaktpersoner
+
+p Kontakta följande personer om du har frågor om rekrytering, särskild allmänläkarutbildning och specialiseringsutbildning och amanuenstjänstgöring samt forskning och utbildning.
+
+div.listing.no-links
+  ul
+    for contact in contacts
+      li(itemscope, itemtype="http://data-vocabulary.org/Person")
+        h3 
+          span(itemprop="title role")= contact.title + " "
+          span(itemprop="name")= contact.first_name + " " + contact.last_name
+        ul
+          li Telefonnummer: 
+            a(href= "tel:" + contact.phone, itemprop="telephone")= contact.phone
+          li E-post: 
+            a(href= "mailto:" + contact.email, itemprop="email")= contact.email                    
+
+if training_presentation && training_presentation.length > 0
+  
+  h2 Särskild allmänläkarutbildning och specialiseringsutbildning
+
+  != training_presentation
+
+if general_presentation && general_presentation.length > 0
+
+  h2 Allmänt om hälsovårdscentralen
+
+  != general_presentation
+
+if general_presentation_link && general_presentation_link.length > 0
+  
+  p Mera information finns på: 
+    a(href=general_presentation_link)= general_presentation_link
+    
+h2 Verksamhetsställen
+
+div.listing.no-links
+  ul
+    for office in offices
+      li(itemscope, itemtype="http://data-vocabulary.org/Organization")
+        h3(itemprop="name")= office.name
+        ul
+          li(itemprop="address", itemscope, itemtype="http://schema.org/PostalAddress") Adress: 
+            a(href= "http://maps.google.fi/maps?f=q&source=s_q&hl=fi&geocode=&q=" + office.street + "+" + office.postal_code + "+" + office.locality)
+              span(itemprop="streetAddress")= office.street + ", " 
+              span(itemprop="postalCode")= office.postal_code + " " 
+              span(itemprop="addressLocality")= office.locality 
+          li Webbplats:
+            a(href= office.web_address, itemprop="url")= " " + office.web_address

@@ -1,0 +1,80 @@
+---
+layout: fi
+title: Tietoja sivustosta
+description: TKrekry on Pirkanmaan sairaanhoitopiirin kehittämä ja ylläpitämä valtakunnallinen terveyskeskuksien käyttöön tarkoitettu lääkärien ja hammaslääkärien rekrytointisivusto.
+keywords: hammaslääkäri, palkka, koulutus, julkinen, terveydenhuolto, pirkanmaan sairaanhoitopiiri, PSHP, perusterveydenhuolto
+counterPart: /sv/om-webbplatsen.html
+language: fi
+---
+
+h1 Tietoja sivustosta
+
+h2 Sivuston tarkoitus
+
+p TKrekry on Pirkanmaan sairaanhoitopiirin <a href="http://www.pshp.fi/default.aspx?contentid=259&contentlan=1">Perusterveydenhuollon yksikön (PETE)</a> kehittämä ja ylläpitämä valtakunnallinen terveyskeskuksien käyttöön tarkoitettu lääkärien ja hammaslääkärien rekrytointisivusto.
+
+p TKrekry tavoite on tukea ja tehostaa lääkärien ja hammaslääkärien rekrytointia terveyskeskuksiin:
+
+ul
+  li Kertomalla mitä työskentely terveyskeskuksessa on ja mistä terveyskeskuksen palkkalistoilla olevan lääkärin tai hammaslääkärin palkka muodostuu.
+  li Ilmoittamalla terveyskeskusten avoimista työpaikoista (lääkärit ja hammaslääkärit).
+  li Tekemällä yhteydenoton terveyskeskuksen rekrytoinnista vastaaviin henkilöihin mahdollisimman helpoksi.
+
+p Tkrekryn visio on olla ensimmäinen ja tärkein tiedonlähde jokaiselle uutta työpaikkaa hakevalle lääkärille tai hammaslääkärille. TKrekry palvelee sekä terveyskeskusten, että työnhakijoiden tarpeita olemalla selkeän informatiivinen ja käytettävä verkkopalvelu.
+
+h2 Ylläpito ja yhteystiedot
+
+p Sivuston ylläpitoon, sisältöön, kehitysehdotuksiin ja muuhun palautteeseen liittyvissä asioissa ota yhteyttä sähköpostilla: <a href="mailto:info@tkrekry.fi">info@tkrekry.fi</a>. Voit halutessasi jättää kehitysehdotuksesi nimettömänä <a class="popup" target="_blank" href="https://docs.google.com/forms/d/19z6cLV8PtCBRz85DYCrxC-mtpidWxm_s2bVsbO0Td2I/viewform?usp=send_form">palautelomakkeella&nbsp;&rsaquo;</a>
+
+p Työpaikkailmoituksiin, työnhakuun ja terveyskeskusten esittelysisältöihin liittyvissä asioissa ota yhteyttä suoraa ko. terveyskeskukseen. Ks. <a href="/terveyskeskukset.html">terveyskeskusten yhteystiedot</a>.
+
+h3 Terveyskeskusten rekisteröityminen ja kirjautuminen
+
+p Terveyskeskukset voivat maksutta rekisteröityä Tkrekryn käyttäjiksi ja julkaista siellä oman esittelynsä, yhteystietonsa ja lääkärien ja hammaslääkärien työpaikkailmoitukset. Terveyskeskusten kirjautuminen työpaikkailmoitusten julkaisuun ja tietojen ylläpitoon löytyy osoitteesta <a href=#{site.admin_url}>#{site.admin_url}</a>.
+
+    
+h3 Tekniset asiat
+
+p Sivusto ja sen ylläpitotyökalu on toteutettu <a href="http://nodejs.org/">Node.js</a> sovelluksena siten, että ylläpitotyökalun tuotantoympäristö ja <a href="http://www.mongodb.org/">MongoDB-tietokanta</a> ovat <a href="https://www.heroku.com/">Herokussa</a>, josta julkinen sivusto julkaistaan periodisesti staattiseksi HTML:ksi <a href="http://aws.amazon.com/s3/">Amazonin S3</a>:een.
+
+p Sivuston lähdekoodi tullaan julkaisemaan avoimella MIT-lisenssillä Githubissa. Sovelluksen kehityksessä on käytetty mm. seuraavia työkaluja ja kirjastoja:
+
+ul
+  li 
+    a(href="http://gruntjs.com/") http://gruntjs.com/
+  li 
+    a(href="https://github.com/bower/bower") https://github.com/bower/bower 
+  li 
+    a(href="https://angularjs.org/") https://angularjs.org/ 
+  li 
+    a(href="http://docpad.org/") http://docpad.org/
+  li 
+    a(href="http://getbootstrap.com/") http://getbootstrap.com/ 
+    
+p Sivuston ovat toteuttaneet <a href="http://fi.linkedin.com/in/jaakkosuutarla">Jaakko Suutarla</a> ja <a href="http://www.pirkkarannikko.com/">Pirkka Rannikko</a>. Toteutusprojektin taustoista ja vaiheista voi lukea lisää osoitteessa: <a href="http://tkrekry.wordpress.com/">http://tkrekry.wordpress.com/</a>
+
+h2 Työpaikkailmoitukset ja terveyskeskusten tiedot
+
+p Terveyskeskukset vastaavat itse sivustolla olevien työpaikkailmoitusten, esittelysisältöjen ja yhteystietojen oikeellisuudesta ja ajantasaisuudesta.
+
+h3 RSS-uutissyöte
+
+p Tkrekryssä julkaistut työpaikkailmoitukset voi tilata RSS-uutissyötteenä osoitteesta: <a href="/feed/rss.xml">http://www.tkrekry.fi/feed/rss.xml</a>.
+
+p Kolmannet osapuolet voivat käyttää RSS-syötettä TKrekryn työpaikkailmoitusten esittämiseen muissa lähteissä, kunhan tähän pyydetään Pirkanmaan sairaanhoitopiirin lupa: <a href="mailto:info@tkrekry.fi">info@tkrekry.fi</a>
+
+h3 Facebook ja Google+
+
+p Tkrekryssä julkaistut työpaikkailmoitukset julkaistaan myös TKrekryn Facebook sivulla osoitteessa <a href="https://www.facebook.com/tkrekry">https://www.facebook.com/tkrekry</a>. TKrekryllä on myös <a href="https://plus.google.com/+TkrekryFi">Google+ sivu</a>, jonne työpaikkailmoitukset saatetaan julkaista tulevaisuudessa.
+
+h2 Yksityisyydensuoja, kävijäseuranta ja evästeet
+
+p Sivustolla käytetään <a href="http://fi.wikipedia.org/wiki/Ev%C3%A4ste">evästeitä</a> (cookies) sivuston kävijäliikenteen tilastointiin. Voit halutessasi estää evästeiden käytön selaimesi asetuksista, mutta emme suosittele tätä sillä monien www-sivustojen toiminta riippuu ko. ominaisuudesta. 
+
+p Kävijäliikenteen tilastoinnissa käytetään <a href="http://www.google.com/analytics/">Google Analytics</a> palvelua tarkoituksena tukea Tkrekryn jatkokehitystä. Kävijätilastojen avulla ei voida yksilöidä tai tunnistaa yksittäistä kävijää, vaan tietoja kerätään yleisemmällä tasolla esim. "59% kävijöistä käyttää Internet Explorer selainta" tai "25% kävijöistä on iältään 18-24 vuotiaita". Voit halutessasi myös estää kävijäseurannan asentamalla selaimeesi <a href="https://tools.google.com/dlpage/gaoptout">Google Analytics Opt-out laajennuksen</a>.
+
+h2 Saavutettavuus
+
+p Sivuston tavoitteena on olla kaikkien käyttäjien saavutettavissa käytetystä päätelaitteesta ja yhteysnopeudesta tai käyttäjästä itsestään johtuvista rajoitteista riippumatta. Sivusto on toteutettu noudattaen www-standardeja ja muita hyväksi todettuja www-suunnittelun käytäntöjä ja se on testattu useilla eri selainohjelmistoilla mahdollisimman laajan saavutettavuuden takaamiseksi.
+
+p Jos kuitenkin koet haasteita sivuston käytössä, niin otamme mielellämme palautteesi vastaan <a href="info@tkrekry.fi">sähköpostilla</a> ja pyrimme huomioimaan sen sivuston jatkokehityksessä.

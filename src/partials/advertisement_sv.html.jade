@@ -1,0 +1,55 @@
+---
+title: Lediga jobb - Platsannons: title + ", " + employer.name + ", " + ( office && office.locality )
+description: Lediga jobb - Platsannons: title + ", " + employer.name + ", " + ( office && office.locality )
+---
+h1 #{title},
+  span #{employer.name}, #{office && office.locality}
+
+!= description
+
+div.listing.no-links
+  ul
+    if office
+      li
+        h3 Webbplats:
+        p
+          a(href=office.web_address)=office.web_address
+    li
+      h3 Kontaktinformation:
+      ul.jobadcontacts
+        for contact in contacts
+          li(itemscope, itemtype="http://data-vocabulary.org/Person")
+            span(itemprop="title role")= contact.title + " "
+            span(itemprop="name")= contact.first_name + " " + contact.last_name + " "
+            a(href= "tel:" + contact.phone, itemprop="telephone")= contact.phone
+            a(href= "mailto:" + contact.email, itemprop="email")= contact.email
+
+    if office
+      li
+        h3 Arbetsplatsens adress:
+        p
+          a(href= "http://maps.google.fi/maps?f=q&source=s_q&hl=fi&geocode=&q=" + office.street + "+" + office.postal_code + "+" + office.locality)
+            span(itemprop="streetAddress")= office.street + ", "
+            span(itemprop="postalCode")= office.postal_code + " "
+            span(itemprop="addressLocality")= office.locality
+    li
+      h3 Anställningstyp:
+      p= job_type.name.sv
+    li
+      h3 Anställningens längd:
+      p= job_duration.name.sv
+    li
+      h3 Arbetstid:
+      p= working_hours
+    li
+      h3 Arbetet börjar:
+      p= work_begins
+    li
+      h3 Ansökningstiden går ut:
+      p= formatDate(application_period_end, 'DD.MM.YYYY - HH:mm')
+    li
+      h3 Lämna en arbetsansökan:
+      p= application_submission
+    li
+      h3 Annonsdatum:
+      p= formatDate(published_at, 'DD.MM.YYYY')

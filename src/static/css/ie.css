@@ -1,0 +1,9 @@
+#news {
+  background: #00a554;
+}
+@media only screen and (min-width: 48em) /* 768px / 16px */
+{
+  .teaser-wrapper {
+    background: url('http://res.cloudinary.com/hcmcbhfea/image/upload/v1414773964/teaser-wrapper-bg.gif') center top repeat-y;  
+  }
+}

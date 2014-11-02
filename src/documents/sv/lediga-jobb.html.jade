@@ -1,0 +1,95 @@
+---
+layout: "sv"
+title: "Lediga jobb för läkare och tandläkare på hälsovårdscentraler"
+description: Hälsovårdscentralernas platsannonser om lediga jobb, inkl. fasta anställningar, vikariat och jour för läkare och tandläkare samt amanuenstjänstgöringar för medicine studerande.
+keywords: platsannons, ledigt jobb, hälsovårdscentral, läkare, tandläkare, vikariat, fast anställning, jour, amanuenstjänstgöring, amanuens
+counterPart: /avoimet-tyopaikat.html
+language: "sv"
+scripts: ["/javascripts/advertisement-filter.js"]
+mtime: getCollection("advertisements_sv").findAllLive({lang: 'sv', published: true}, [{mtime: -1}]).toJSON()[0].tkrekry.mtime.toUTCString()
+---
+
+h1 Lediga jobb
+
+p Hälsovårdscentralernas platsannonser för läkare och tandläkare.
+form
+  fieldset
+    legend Vilka platsannonser vill du se?
+    ul
+      li
+        label(for="ammattiryhma") Yrkesgrupp:
+        select#ammattiryhma(name="ammattiryhma")
+          option(value="") Alla
+          option(value="laakari") Läkare
+          option(value="hammaslaakari") Tandläkare
+      li
+        label(for="alue") Område:
+        select#alue(name="alue")
+          option(value="") Alla
+
+          for domain in getDomains()
+            option(value="domain-#{domain.id}")=domain.name
+            optgroup
+              for district in getDistrictsForDomain(domain.id)
+                option(value="district-#{district.id}")=district.name
+
+        div
+          label(for="koulutusterveyskeskus") Visa endast utbildningshälsovårdscentralernas annonser
+          input#koulutusterveyskeskus(type="checkbox" name="koulutusterveyskeskus", value="true")
+      li
+        fieldset
+          legend Typ:
+          ul
+            li
+              label(for="job-type-1") Kort vikariat
+              input#job-type-1.job-type(type="checkbox", name="job-type-1", checked="" value="lyhyt-sijaisuus")
+            li
+              label(for="job-type-2") Långt vikariat
+              input#job-type-2.job-type(type="checkbox", name="job-type-2", checked="" value="pitka-sijaisuus")
+            li
+              label(for="job-type-3") Fast anställning
+              input#job-type-3.job-type(type="checkbox", name="job-type-3", checked="" value="vakituinen")
+            li
+              label(for='job-type-4') Jour
+              input#job-type-4.job-type(type="checkbox", name='job-type-4', checked="" value="paivystys")
+            li
+              label(for='job-type-5') Amanuens
+              input#job-type-5.job-type(type="checkbox", name='job-type-5', checked="" value="amanuenssi")
+
+      li#subscribe
+        label Begär annonser:
+
+        ul
+          li
+            a#email(href="https://docs.google.com/forms/d/1gn79ew93DhI_RJT432NR1QJz_RXAYJTXOHg_7JPbs4M/viewform?usp=send_form", class="popup")
+              i.fa.fa-envelope
+              span Per e-post
+          li
+            a#rss(href="/feed/rss.xml", type="application/rss+xml", title="På finska")
+              i.fa.fa-rss
+              span Som RSS-flöde
+          li
+            a#facebook(href="https://www.facebook.com/tkrekry")
+              i.fa.fa-facebook
+              span I Facebook
+
+- advertisementsToShow = getCollection("advertisements_sv").findAllLive({lang: 'sv', published: true}, [{mtime: -1}]).toJSON()
+
+h2.listing-header Antal platsannonser
+  span.number-of-advertisement
+  span &nbsp;st.
+div.listing
+  ul
+    for advertisement in advertisementsToShow
+      if (advertisement && advertisement.tkrekry)
+        li.result(class="area-district-#{advertisement.tkrekry.employer.district && advertisement.tkrekry.employer.district.id} area-domain-#{advertisement.tkrekry.employer.domain && advertisement.tkrekry.employer.domain.id} job-duration-#{advertisement.tkrekry.job_duration && advertisement.tkrekry.job_duration.id} job-type-#{advertisement.tkrekry.job_type && advertisement.tkrekry.job_type.id} job-profession-group-#{advertisement.tkrekry.job_profession_group && advertisement.tkrekry.job_profession_group.id} employer-suitable-for-specialization-#{advertisement.tkrekry.employer && advertisement.tkrekry.employer.suitable_for_specialization}")
+          a(href="/#{advertisement.slug}")
+            h3 #{advertisement.tkrekry.title}
+            p
+              | #{advertisement.tkrekry.employer && advertisement.tkrekry.employer.name},
+              | #{advertisement.tkrekry.office && advertisement.tkrekry.office.locality}.
+              | #{advertisement.tkrekry.job_profession_group && advertisement.tkrekry.job_profession_group.name.sv}.
+              | #{advertisement.tkrekry.job_type && advertisement.tkrekry.job_type.name.sv}. Ansökningstiden går ut:
+              | #{advertisement.tkrekry.application_period_end && formatDate(advertisement.tkrekry.application_period_end, 'DD.MM.YYYY')}.
+
+            i.fa.fa-chevron-right.fa-2x

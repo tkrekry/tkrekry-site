@@ -1,0 +1,48 @@
+---
+layout: fi
+title: Terveyskeskusten avoimet työpaikat lääkäreille ja hammaslääkäreille
+description: Lääkärien ja hammaslääkärien avoimet työpaikat sekä rekrytoinnista vastaavien henkilöiden yhteystiedot terveyskeskuksissa. Yleislääkätieteen erityis- ja erikoitusmiskoulutus, palkat, työsuhde-edut ja terveyskeskusten työjärjestelyt.
+keywords: lääkäri, hammaslääkäri, avoin työpaikka, avoimet työpaikat, työpaikkailmoitus, terveyskeskus, yleislääketieteen erityis- ja erikoistumiskoulutus, työsuhde-edut, palkka, työjärjestelyt
+counterPart: /sv/index.html
+language: fi
+---
+div(class="teaser", id="welcome")
+  div
+    h1 Tule töihin <br />terveyskeskukseen
+    p Löydät TKrekrystä lääkärien ja hammaslääkärien <a href="/avoimet-tyopaikat.html">avoimet työpaikat</a> sekä terveyskeskusten rekrytoinnista vastaavien <a href="/terveyskeskukset.html">yhteystiedot</a>. Kerromme myös yleisesti terveyskeskuksessa <a href="/toissa-terveyskeskuksessa.html">työskentelystä</a>.
+  img(src="http://res.cloudinary.com/hcmcbhfea/image/upload/v1414773964/tkrekry-banner-03.jpg", alt="Mieslääkäri tutkii potilaan korvaa")
+
+div.teaser-wrapper
+  a(href="/toissa-terveyskeskuksessa.html", class="teaser-link")
+    div(class="teaser", id="content")
+      h2 Töissä <br />terveyskeskuksessa
+      p Me kerromme yleislääketieteen erityis- ja erikoistumiskoulutuksesta, töiden hakemisesta, palkoista, työsuhde-eduista ja  työjärjestelyistä.
+      p.button Lue terveyskeskuksessa työskentelystä&nbsp;&rsaquo;
+
+  a(href="/terveyskeskukset.html", class="teaser-link")
+    div(class="teaser", id="contact")
+      h2 Terveyskeskusten <br />yhteystiedot
+      p Löydät sivustolta terveyskeskusten esittelyt sekä rekrytoinnista vastaavien henkilöiden yhteystiedot. 
+      p.button Ota yhteyttä ja kysy töitä&nbsp;&rsaquo;
+  
+div(class="teaser listing", id="jobs")
+  h2 
+    a(href="/avoimet-tyopaikat.html") Terveyskeskusten avoimet työpaikat <br />lääkäreille ja hammaslääkäreille
+  ul
+    for advertisement in getCollection("advertisements_fi").findAllLive({lang: 'fi', published: true}, [{mtime: -1}]).toJSON().slice(0,5)
+      if (advertisement && advertisement.tkrekry)        
+        li
+          a(href="/#{advertisement.slug}")
+            h3 #{advertisement.tkrekry.title}
+            p 
+              | #{advertisement.tkrekry.employer && advertisement.tkrekry.employer.name}, 
+              | #{advertisement.tkrekry.office && advertisement.tkrekry.office.locality}. 
+              | #{advertisement.tkrekry.job_profession_group && advertisement.tkrekry.job_profession_group.name.fi}. 
+              | #{advertisement.tkrekry.job_type && advertisement.tkrekry.job_type.name.fi}. Haku päättyy: 
+              | #{advertisement.tkrekry.application_period_end && moment(advertisement.tkrekry.application_period_end).format('DD.MM.YYYY')}.
+            
+            i.fa.fa-chevron-right.fa-2x
+
+  p
+    a(href="/avoimet-tyopaikat.html", class="button") Katso kaikki avoimet työpaikat&nbsp;&rsaquo;
+      

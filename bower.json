@@ -1,0 +1,12 @@
+{
+  "name": "tkrekry-site",
+  "dependencies": {
+    "html5shiv": "~3.7.0",
+    "bacon": "~0.7.10",
+    "respond": "~1.4.2",
+    "lodash": "~2.4.1",
+    "jquery": "~1.11.1",
+    "components-font-awesome": "~4.0.3",
+    "moment-timezone": "~0.2.2"
+  }
+}

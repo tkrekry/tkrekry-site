@@ -1,0 +1,95 @@
+---
+layout: "fi"
+title: "Lääkärin ja hammaslääkärin avoimet työpaikat terveyskeskuksissa"
+description: Lääkärien ja hammaslääkärien avoimet työpaikat terveyskeskuksissa. Vakinaiset paikat, sijaisuudet ja päivystykset lääkäreille ja hammaslääkäreille sekä amanuenssuurit lääketieteen opiskelijoille.
+keywords: työpaikkailmoitus, avoin työpaikka, terveyskeskus, lääkäri, hammaslääkäri, sijaisuus, vakituinen, päivystys, amanuenssuuri, amanuenssi
+counterPart: /sv/lediga-jobb.html
+language: "fi"
+scripts: ["/javascripts/advertisement-filter.js"]
+mtime: getCollection("advertisements_fi").findAllLive({lang: 'fi', published: true}, [{mtime: -1}]).toJSON()[0].tkrekry.mtime.toUTCString()
+---
+
+h1 Avoimet työpaikat
+
+p Lääkärin ja hammaslääkärin työpaikkailmoitukset terveyskeskuksissa.
+form
+  fieldset
+    legend Mitä ilmoituksia haluat nähdä?
+    ul
+      li
+        label(for="ammattiryhma") Ammattiryhmä:
+        select#ammattiryhma(name="ammattiryhma")
+          option(value="") Kaikki
+          option(value="laakari") Lääkäri
+          option(value="hammaslaakari") Hammaslääkäri
+      li
+        label(for="alue") Alue:
+        select#alue(name="alue")
+          option(value="") Kaikki
+
+          for domain in getDomains()
+            option(value="domain-#{domain.id}")=domain.name
+            optgroup
+              for district in getDistrictsForDomain(domain.id)
+                option(value="district-#{district.id}")=district.name
+
+        div
+          label(for="koulutusterveyskeskus") Näytä vain koulutusterveyskeskusten ilmoitukset
+          input#koulutusterveyskeskus(type="checkbox" name="koulutusterveyskeskus", value="true")
+      li
+        fieldset
+          legend Tyyppi:
+          ul
+            li
+              label(for="job-type-1") Lyhyt sijaisuus
+              input#job-type-1.job-type(type="checkbox", name="job-type-1", checked="" value="lyhyt-sijaisuus")
+            li
+              label(for="job-type-2") Pitkä sijaisuus
+              input#job-type-2.job-type(type="checkbox", name="job-type-2", checked="" value="pitka-sijaisuus")
+            li
+              label(for="job-type-3") Vakituinen
+              input#job-type-3.job-type(type="checkbox", name="job-type-3", checked="" value="vakituinen")
+            li
+              label(for='job-type-4') Päivystys
+              input#job-type-4.job-type(type="checkbox", name='job-type-4', checked="" value="paivystys")
+            li
+              label(for='job-type-5') Amanuenssi
+              input#job-type-5.job-type(type="checkbox", name='job-type-5', checked="" value="amanuenssi")
+
+      li#subscribe
+        label Tilaa ilmoitukset:
+
+        ul
+          li
+            a#email(href="https://docs.google.com/forms/d/1gn79ew93DhI_RJT432NR1QJz_RXAYJTXOHg_7JPbs4M/viewform?usp=send_form", class="popup")
+              i.fa.fa-envelope
+              span Sähköpostilla
+          li
+            a#rss(href="/feed/rss.xml", type="application/rss+xml")
+              i.fa.fa-rss
+              span Uutissyötteenä
+          li
+            a#facebook(href="https://www.facebook.com/tkrekry")
+              i.fa.fa-facebook
+              span Facebookissa
+
+- advertisementsToShow = getCollection("advertisements_fi").findAllLive({lang: 'fi', published: true}, [{mtime: +1}]).toJSON()
+
+h2.listing-header Työpaikkailmoitukset
+  span.number-of-advertisement
+  span &nbsp;kpl
+div.listing
+  ul
+    for advertisement in advertisementsToShow
+      if (advertisement && advertisement.tkrekry)
+        li.result(class="area-district-#{advertisement.tkrekry.employer.district && advertisement.tkrekry.employer.district.id} area-domain-#{advertisement.tkrekry.employer.domain && advertisement.tkrekry.employer.domain.id} job-duration-#{advertisement.tkrekry.job_duration && advertisement.tkrekry.job_duration.id} job-type-#{advertisement.tkrekry.job_type && advertisement.tkrekry.job_type.id} job-profession-group-#{advertisement.tkrekry.job_profession_group && advertisement.tkrekry.job_profession_group.id} employer-suitable-for-specialization-#{advertisement.tkrekry.employer && advertisement.tkrekry.employer.suitable_for_specialization}")
+          a(href="/#{advertisement.slug}")
+            h3 #{advertisement.tkrekry.title}
+            p
+              | #{advertisement.tkrekry.employer && advertisement.tkrekry.employer.name},
+              | #{advertisement.tkrekry.office && advertisement.tkrekry.office.locality}.
+              | #{advertisement.tkrekry.job_profession_group && advertisement.tkrekry.job_profession_group.name.fi}.
+              | #{advertisement.tkrekry.job_type && advertisement.tkrekry.job_type.name.fi}. Haku päättyy:
+              | #{advertisement.tkrekry.application_period_end && formatDate(advertisement.tkrekry.application_period_end, 'DD.MM.YYYY')}.
+
+            i.fa.fa-chevron-right.fa-2x

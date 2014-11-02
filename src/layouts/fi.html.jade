@@ -1,0 +1,58 @@
+extends default.html
+
+mixin menu-item(url, name)
+  li
+    if document.url === url
+      strong=name
+    else
+      a(href=url)=name
+
+    if block
+      block
+
+block logo
+  div.logo
+    h1
+      a(href="/", title="Etusivulle", id="header-main") 
+        span TKrekry
+    h2 Tule tiimiin - töihin terveyskeskukseen
+
+//- Utility-nav block for switch language
+block utility-nav
+  div.utility-nav
+    ul
+      li
+        strong fi
+      li
+        a(href=document.meta.counterPart) sv
+      li
+        a(href= site.admin_url)
+          i.fa.fa-lock
+          span Kirjaudu
+
+//- Render main menu
+block navigation
+  nav(role="navigation")
+    ul#nav
+      +menu-item("/", "Etusivu")
+      +menu-item("/avoimet-tyopaikat.html", "Avoimet työpaikat")
+      +menu-item("/terveyskeskukset.html", "Terveyskeskukset")
+      +menu-item("/toissa-terveyskeskuksessa.html", "Töissä terveyskeskuksessa")
+        ul#sub-nav
+          +menu-item("/toissa-terveyskeskuksessa/erityis-ja-erikoistumiskoulutus.html", "Yleislääketieteen erityis- ja erikoistumiskoulutus")
+          +menu-item("/toissa-terveyskeskuksessa/ohjeita-tyonhakuun.html", "Ohjeita työnhakuun")
+          +menu-item("/toissa-terveyskeskuksessa/laakarin-palkka.html", "Lääkärin palkka")
+          +menu-item("/toissa-terveyskeskuksessa/hammaslaakarin-palkka.html", "Hammaslääkärin palkka")
+          +menu-item("/toissa-terveyskeskuksessa/tyosuhde-edut.html", "Työsuhde-edut")
+          +menu-item("/toissa-terveyskeskuksessa/tyojarjestelyt.html", "Työjärjestelyt")
+
+//- Render footer
+block footer
+  footer(role="contentinfo")
+    div
+      p
+        a(href="/", title="Etusivulle", id="footer-main") 
+          span TKrekry
+        span &copy; Pirkanmaan sairaanhoitopiiri 2014     
+      p
+        a(href="/tietoja-sivustosta.html") Tietoja sivustosta

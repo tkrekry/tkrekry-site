@@ -1,0 +1,26 @@
+---
+layout: sv
+title: Hälsovårdscentralerna och kontaktinformation till rekryteringsansvariga
+description: Hälsovårdscentralerna samt deras utbildningsberedskap, verksamhetsställen och kontaktinformation till de rekryteringsansvariga för läkare och tandläkare.
+keywords: hälsovårdscentral, kontaktinformation, läkare, tandläkare, verksamhetsställe, särskild allmänläkarutbildning och specialiseringsutbildning, rekrytering
+counterPart: /terveyskeskukset.html
+language: sv
+scripts: ["/javascripts/employer-filter.js"]
+mtime: getCollection("employers_sv").findAllLive({lang: 'sv'}, [{title: +1}]).toJSON()[0].tkrekry.mtime.toUTCString()
+---
+
+h1 Hälsovårdscentraler
+
+p Du kan själv kontakta hälsovårdscentralerna om du har frågor om rekrytering, särskild allmänläkarutbildning och specialiseringsutbildning och amanuenstjänstgöring samt forskning och utbildning.
+
+div.listing
+  form(role="search", id="searchform")
+    label(for="search") Sök på namn:
+    input#search(type="search")
+
+  ul#employer-list
+    for employer in getCollection("employers_sv").findAllLive({lang: 'sv'}, [{title: +1}]).toJSON()
+      li
+        a(href="/#{employer.slug}")
+          h2 #{employer.tkrekry && employer.tkrekry.name}
+          i.fa.fa-chevron-right.fa-2x

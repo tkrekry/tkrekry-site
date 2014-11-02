@@ -1,0 +1,26 @@
+---
+layout: fi
+title: Terveyskeskusten yhteystiedot ja esittelyt
+description: Terveyskeskukset ja koulutusvalmiudet, toimipisteet sekä lääkärien ja hammaslääkärien rekrytoinnista vastaavien henkilöiden yhteystiedot.
+keywords: terveyskeskus, yhteystiedot, lääkäri, hammaslääkäri, toimipiste, yleislääketieteen erityis- ja erikoistumiskoulutus, rekry, rekrytointi
+counterPart: /sv/halsovardscentralen.html
+language: fi
+scripts: ["/javascripts/employer-filter.js"]
+mtime: getCollection("employers_fi").findAllLive({lang: 'fi'}, [{title: +1}]).toJSON()[0].tkrekry.mtime.toUTCString()
+---
+
+h1 Terveyskeskukset
+
+p Voit ottaa terveyskeskuksiin suoraa yhteyttä rekrytointiin, erityis- ja erikoistumiskoulutukseen ja amanuenssuureihin sekä tutkimukseen ja kehitykseen liittyvissä asioissa.
+
+div.listing
+  form(role="search", id="searchform")
+    label(for="search") Hae nimellä:
+    input#search(type="search")
+
+  ul#employer-list
+    for employer in getCollection("employers_fi").findAllLive({lang: 'fi'}, [{title: +1}]).toJSON()
+      li
+        a(href="#{employer.slug}")
+          h2 #{employer.tkrekry && employer.tkrekry.name} 
+          i.fa.fa-chevron-right.fa-2x

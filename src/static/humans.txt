@@ -1,0 +1,15 @@
+/* TEAM */
+  Developer: Jaakko Suutarla
+  Site: http://fi.linkedin.com/in/jaakkosuutarla
+  
+  UX design, front-end, project management: Pirkka Rannikko
+  Site: http://www.pirkkarannikko.com/
+  
+  Graphic design: Pasi Tuomaala
+  Site: http://pasituomaala.com/
+  
+  User research: Johannes Pitkänen
+  Site: jonsu.pitkanen@gmail.com
+  
+  Content: Folks at Pirkanmaan sairaanhoitopiiri
+  Site: http://www.pshp.fi/
