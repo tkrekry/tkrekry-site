@@ -116,7 +116,7 @@ $(document).ready(function ()
         ga('send', 'event', 'Links', 'RSS', url);
 			}
 			else if ($(this).attr('href').match(filetypes)) {
-				var host = location.host.replace(/\./, "\\."), pattern = new RegExp('^(http\:\/\/)*(www\.)*(' + tkrekry.fi + ')*\/', 'i');
+				var host = location.host.replace(/\./, "\\."), pattern = new RegExp('^(http\:\/\/)*(www\.)*(' + 'tkrekry.fi' + ')*\/', 'i');
 				url = $(this).attr('href').replace(pattern, "");
         ga('send', 'event', 'Links', 'Downloads', url);
 			}
