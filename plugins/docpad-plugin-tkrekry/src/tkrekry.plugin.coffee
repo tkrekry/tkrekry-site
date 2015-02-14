@@ -17,7 +17,7 @@ module.exports = (BasePlugin) ->
 		# Config
 		config:
 			priority: 900
-			apiUrl: "http://admin.beta.tkrekry.fi"
+			apiUrl: "https://admin.tkrekry.fi"
 			injectDocumentHelperAdvertisement: null
 			injectDocumentHelperEmployer: null
 			relativeDirPathAdvertisements:
