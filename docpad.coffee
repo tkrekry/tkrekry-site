@@ -168,7 +168,7 @@ docpadConfig = {
       url: (process.env.SITE_URL||"http://www.tkrekry.fi")
 
       # The production admin url
-      admin_url: process.env.ADMIN_URL||"http://admin.beta.tkrekry.fi"
+      admin_url: process.env.ADMIN_URL||"http://admin.tkrekry.fi"
 
       # The default title of our website
       title: "TKrekry"
@@ -402,7 +402,7 @@ docpadConfig = {
       filePath: 'sitemap.xml'
 
     tkrekry:
-      apiUrl: process.env.API_URL || "http://admin.beta.tkrekry.fi"
+      apiUrl: process.env.API_URL || "http://admin.tkrekry.fi"
       extension: '.html.jade'
       injectDocumentHelperEmployer:
         fi: (document) ->

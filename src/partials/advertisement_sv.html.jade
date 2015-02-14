@@ -53,3 +53,7 @@ div.listing.no-links
     li
       h3 Annonsdatum:
       p= formatDate(published_at, 'DD.MM.YYYY')
+
+- employerPage = getCollection("employers_sv").findAll({tkrekryId: employer._id}).toJSON()[0]
+p Se även
+  a(href="/#{employerPage.slug}")= " " + employer.name + " introduktionen ›"

@@ -54,3 +54,7 @@ div.listing.no-links
       h3 Ilmoitus jätetty:
       p= formatDate(published_at, 'DD.MM.YYYY')
 
+- employerPage = getCollection("employers_fi").findAll({tkrekryId: employer._id}).toJSON()[0]
+
+p Katso myös
+  a(href="/#{employerPage.slug}")= " " + employer.name + " esittely ›"

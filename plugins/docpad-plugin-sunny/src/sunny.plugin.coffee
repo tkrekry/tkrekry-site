@@ -202,5 +202,7 @@ module.exports = (BasePlugin) ->
                 @config.uploader.process ()->
                     console.log("All files uploaded")
                     next?()
+          else
+            next?()
 
 
