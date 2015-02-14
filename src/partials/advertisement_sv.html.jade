@@ -53,8 +53,3 @@ div.listing.no-links
     li
       h3 Annonsdatum:
       p= formatDate(published_at, 'DD.MM.YYYY')
-
-- employerPage = getCollection("employers_sv").findAllLive({lang: 'sv', tkrekryId: employer._id}, [{mtime: +1}]).toJSON()
-p
-  a(href="#{employerPage.slug}")
-    h2 Se även #{employer.name}.
