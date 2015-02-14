@@ -3,7 +3,7 @@ path = require('path')
 _ = require('lodash')
 
 moment = require('moment-timezone')
-moment.locale('fi')
+# moment.locale('fi')
 
 # DocPad Configuration
 docpadConfig = {

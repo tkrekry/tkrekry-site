@@ -18,7 +18,7 @@
   "author": "Jaakko Suutarla <jaakko@suutarla.com>",
   "license": "MIT",
   "dependencies": {
-    "docpad": "~6.70.1",
+    "docpad": "~6.69.2",
     "docpad-plugin-moment": "~2.0.2",
     "docpad-plugin-jade": "~2.7.0",
     "docpad-plugin-partials": "~2.9.1",
@@ -54,7 +54,7 @@
     "safefs": "^3.1.1",
     "extendr": "^2.1.0",
     "rss": "^0.3.2",
-    "moment-timezone": "^0.2.2"
+    "moment-timezone": "^0.3.0"
   },
   "devDependencies": {
     "connect-livereload": "~0.4.0",
