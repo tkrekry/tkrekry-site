@@ -10,7 +10,9 @@
     },
     "postinstall": "./node_modules/bower/bin/bower install",
     "docpad": "node_modules/docpad/bin/docpad-server",
-    "restart": "node scripts/heroku/restart.js"
+    "restart": "node scripts/heroku/restart.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "keywords": [
     "tkrekry"
@@ -18,25 +20,25 @@
   "author": "Jaakko Suutarla <jaakko@suutarla.com>",
   "license": "MIT",
   "dependencies": {
-    "docpad": "~6.70.1",
+    "docpad": "~6.74.0",
     "docpad-plugin-moment": "~2.0.2",
-    "docpad-plugin-jade": "~2.7.0",
+    "docpad-plugin-jade": "~2.9.0",
     "docpad-plugin-partials": "~2.9.1",
-    "then-jade": "~2.1.0",
+    "then-jade": "~2.4.0",
     "taskgroup": "~3.3.9",
     "eachr": "2.0.2",
-    "feedr": "~2.8.0",
-    "express": "~3.5.2",
+    "feedr": "~2.10.4",
+    "express": "~4.16.0",
     "grunt-contrib-concat": "~0.4.0",
     "time-grunt": "~0.3.1",
     "jshint-stylish": "~0.2.0",
     "grunt-concurrent": "~0.5.0",
-    "grunt-usemin": "~2.1.1",
+    "grunt-usemin": "~3.1.0",
     "grunt-ember-templates": "~0.4.21",
-    "grunt-contrib-watch": "~0.6.1",
-    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-watch": "~1.0.0",
+    "grunt-contrib-jshint": "~0.11.1",
     "grunt-replace": "~0.7.7",
-    "grunt-contrib-imagemin": "~0.7.0",
+    "grunt-contrib-imagemin": "~0.8.1",
     "lodash": "~2.4.1",
     "slug": "^0.5.0",
     "moment": "^2.6.0",
@@ -53,8 +55,9 @@
     "sitemap": "^0.7.3",
     "safefs": "^3.1.1",
     "extendr": "^2.1.0",
-    "rss": "^0.3.2",
-    "moment-timezone": "^0.3.0"
+    "rss": "^1.0.0",
+    "moment-timezone": "^0.3.0",
+    "snyk": "^1.69.6"
   },
   "devDependencies": {
     "connect-livereload": "~0.4.0",
@@ -84,5 +87,6 @@
   },
   "engines": {
     "node": "0.10.26"
-  }
+  },
+  "snyk": true
 }
