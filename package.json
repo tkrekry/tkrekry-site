@@ -25,7 +25,7 @@
     "then-jade": "~2.1.0",
     "taskgroup": "~3.3.9",
     "eachr": "2.0.2",
-    "feedr": "~2.8.0",
+    "feedr": "~2.10.4",
     "express": "~3.5.2",
     "grunt-contrib-concat": "~0.4.0",
     "time-grunt": "~0.3.1",
