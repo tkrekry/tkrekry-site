@@ -45,7 +45,7 @@
     "sunny": "0.0.6",
     "mime": "^1.2.11",
     "coffee-script": "^1.7.1",
-    "newrelic": "^1.5.4",
+    "newrelic": "^4.0.0",
     "redis": "^0.11.0",
     "hiredis": "^0.1.17",
     "nodetime": "^0.8.15",
