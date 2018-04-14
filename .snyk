@@ -1,0 +1,16 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.10.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:tar:20151103':
+    - grunt-contrib-imagemin > imagemin > imagemin-gifsicle > gifsicle > bin-build > download > decompress > tar:
+        patched: '2017-12-28T22:38:25.151Z'
+    - grunt-contrib-imagemin > imagemin > imagemin-jpegtran > jpegtran-bin > bin-build > download > decompress > tar:
+        patched: '2017-12-28T22:38:25.151Z'
+    - grunt-contrib-imagemin > imagemin > imagemin-optipng > optipng-bin > bin-build > download > decompress > tar:
+        patched: '2017-12-28T22:38:25.151Z'
+    - grunt-contrib-imagemin > imagemin > imagemin-pngquant > pngquant-bin > bin-build > download > decompress > tar:
+        patched: '2017-12-28T22:38:25.151Z'
+    - grunt-contrib-imagemin > imagemin > imagemin-pngquant > pngquant-bin > bin-wrapper > download > decompress > tar:
+        patched: '2017-12-28T22:38:25.151Z'

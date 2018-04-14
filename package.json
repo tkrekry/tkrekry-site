@@ -10,7 +10,9 @@
     },
     "postinstall": "./node_modules/bower/bin/bower install",
     "docpad": "node_modules/docpad/bin/docpad-server",
-    "restart": "node scripts/heroku/restart.js"
+    "restart": "node scripts/heroku/restart.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "keywords": [
     "tkrekry"
@@ -36,7 +38,7 @@
     "grunt-contrib-watch": "~0.6.1",
     "grunt-contrib-jshint": "~0.10.0",
     "grunt-replace": "~0.7.7",
-    "grunt-contrib-imagemin": "~0.7.0",
+    "grunt-contrib-imagemin": "~0.8.1",
     "lodash": "~2.4.1",
     "slug": "^0.5.0",
     "moment": "^2.6.0",
@@ -54,7 +56,8 @@
     "safefs": "^3.1.1",
     "extendr": "^2.1.0",
     "rss": "^0.3.2",
-    "moment-timezone": "^0.3.0"
+    "moment-timezone": "^0.3.0",
+    "snyk": "^1.63.0"
   },
   "devDependencies": {
     "connect-livereload": "~0.4.0",
@@ -84,5 +87,6 @@
   },
   "engines": {
     "node": "0.10.26"
-  }
+  },
+  "snyk": true
 }
