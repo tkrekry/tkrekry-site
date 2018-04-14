@@ -38,7 +38,7 @@
     "grunt-contrib-watch": "~0.6.1",
     "grunt-contrib-jshint": "~0.10.0",
     "grunt-replace": "~0.7.7",
-    "grunt-contrib-imagemin": "~0.8.1",
+    "grunt-contrib-imagemin": "~0.9.0",
     "lodash": "~2.4.1",
     "slug": "^0.5.0",
     "moment": "^2.6.0",
@@ -57,7 +57,7 @@
     "extendr": "^2.1.0",
     "rss": "^0.3.2",
     "moment-timezone": "^0.3.0",
-    "snyk": "^1.63.0"
+    "snyk": "^1.71.0"
   },
   "devDependencies": {
     "connect-livereload": "~0.4.0",

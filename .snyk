@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.10.1
+version: v1.10.2
 ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
@@ -14,3 +14,36 @@ patch:
         patched: '2017-12-28T22:38:25.151Z'
     - grunt-contrib-imagemin > imagemin > imagemin-pngquant > pngquant-bin > bin-wrapper > download > decompress > tar:
         patched: '2017-12-28T22:38:25.151Z'
+  'npm:minimatch:20160620':
+    - grunt-contrib-imagemin > imagemin > imagemin-optipng > optipng-bin > bin-build > download > vinyl-fs > glob-watcher > gaze > globule > minimatch:
+        patched: '2018-04-14T07:35:31.514Z'
+    - grunt-contrib-imagemin > imagemin > imagemin-gifsicle > gifsicle > bin-build > download > vinyl-fs > glob-watcher > gaze > globule > minimatch:
+        patched: '2018-04-14T07:35:31.514Z'
+    - grunt-contrib-imagemin > imagemin > imagemin-gifsicle > gifsicle > bin-wrapper > download > vinyl-fs > glob-watcher > gaze > globule > minimatch:
+        patched: '2018-04-14T07:35:31.514Z'
+    - grunt-contrib-imagemin > imagemin > imagemin-gifsicle > gifsicle > bin-wrapper > download > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch:
+        patched: '2018-04-14T07:35:31.514Z'
+    - grunt-contrib-imagemin > imagemin > imagemin-jpegtran > jpegtran-bin > bin-build > download > vinyl-fs > glob-watcher > gaze > globule > minimatch:
+        patched: '2018-04-14T07:35:31.514Z'
+    - grunt-contrib-imagemin > imagemin > imagemin-jpegtran > jpegtran-bin > bin-build > download > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch:
+        patched: '2018-04-14T07:35:31.514Z'
+    - grunt-contrib-imagemin > imagemin > imagemin-jpegtran > jpegtran-bin > bin-wrapper > download > vinyl-fs > glob-watcher > gaze > globule > minimatch:
+        patched: '2018-04-14T07:35:31.514Z'
+    - grunt-contrib-imagemin > imagemin > imagemin-jpegtran > jpegtran-bin > bin-wrapper > download > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch:
+        patched: '2018-04-14T07:35:31.514Z'
+    - grunt-contrib-imagemin > imagemin > imagemin-gifsicle > gifsicle > bin-build > download > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch:
+        patched: '2018-04-14T07:35:31.514Z'
+    - grunt-contrib-imagemin > imagemin > imagemin-optipng > optipng-bin > bin-build > download > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch:
+        patched: '2018-04-14T07:35:31.514Z'
+    - grunt-contrib-imagemin > imagemin > imagemin-optipng > optipng-bin > bin-wrapper > download > vinyl-fs > glob-watcher > gaze > globule > minimatch:
+        patched: '2018-04-14T07:35:31.514Z'
+    - grunt-contrib-imagemin > imagemin > imagemin-optipng > optipng-bin > bin-wrapper > download > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch:
+        patched: '2018-04-14T07:35:31.514Z'
+    - grunt-contrib-imagemin > imagemin > imagemin-pngquant > pngquant-bin > bin-build > download > vinyl-fs > glob-watcher > gaze > globule > minimatch:
+        patched: '2018-04-14T07:35:31.514Z'
+    - grunt-contrib-imagemin > imagemin > imagemin-pngquant > pngquant-bin > bin-build > download > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch:
+        patched: '2018-04-14T07:35:31.514Z'
+    - grunt-contrib-imagemin > imagemin > imagemin-pngquant > pngquant-bin > bin-wrapper > download > vinyl-fs > glob-watcher > gaze > globule > minimatch:
+        patched: '2018-04-14T07:35:31.514Z'
+    - grunt-contrib-imagemin > imagemin > imagemin-pngquant > pngquant-bin > bin-wrapper > download > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch:
+        patched: '2018-04-14T07:35:31.514Z'
