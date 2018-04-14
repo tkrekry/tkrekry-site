@@ -47,3 +47,31 @@ patch:
         patched: '2018-04-14T07:35:31.514Z'
     - grunt-contrib-imagemin > imagemin > imagemin-pngquant > pngquant-bin > bin-wrapper > download > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch:
         patched: '2018-04-14T07:35:31.514Z'
+    - grunt-contrib-imagemin > imagemin > vinyl-fs > glob-watcher > gaze > globule > minimatch:
+        patched: '2018-04-14T07:36:55.757Z'
+    - grunt-contrib-imagemin > imagemin > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch:
+        patched: '2018-04-14T07:36:55.757Z'
+    - heroku > jasmine-node > gaze > minimatch:
+        patched: '2018-04-14T07:36:55.757Z'
+    - heroku > jasmine-node > gaze > fileset > glob > minimatch:
+        patched: '2018-04-14T07:36:55.757Z'
+    - heroku > jasmine-node > gaze > fileset > minimatch:
+        patched: '2018-04-14T07:36:55.757Z'
+  'npm:moment:20160126':
+    - docpad-plugin-moment > moment:
+        patched: '2018-04-14T07:36:55.757Z'
+  'npm:negotiator:20160616':
+    - docpad > express > connect > negotiator:
+        patched: '2018-04-14T07:36:55.757Z'
+  'npm:qs:20140806-1':
+    - grunt-contrib-watch > tiny-lr-fork > qs:
+        patched: '2018-04-14T07:36:55.757Z'
+  'npm:uglify-js:20151024':
+    - docpad-plugin-jade > jade > transformers > uglify-js:
+        patched: '2018-04-14T07:36:55.757Z'
+    - then-jade > jade > transformers > uglify-js:
+        patched: '2018-04-14T07:36:55.757Z'
+    - docpad-plugin-jade > jade > constantinople > uglify-js:
+        patched: '2018-04-14T07:36:55.757Z'
+    - then-jade > jade > constantinople > uglify-js:
+        patched: '2018-04-14T07:36:55.757Z'
